@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Pet Hotel</title>
+    <style>
+        :root {
+            --primary: #FF8C00;
+            --secondary: #2E856E;
+            --background: #F0F8FF;
+            --text: #333333;
+            --light-text: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('pettop.jpg?height=1080&width=1600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            opacity: 1;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .team {
+            background: #E6F3FF;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+            footer {
+                background-color: #2E856E;
+                color: aliceblue;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="Empresarial.html" style="color: var(--secondary); text-decoration: none; font-weight: bold;">
+            ← Voltar para Home
+        </a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Cuidando do seu Pet com Amor</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                Desde 2024 proporcionando momentos especiais para seu companheiro de quatro patas
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--secondary);">Nossa História</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Como Começamos</h3>
+                    <p>Nascemos da paixão por pets e da necessidade de oferecer um serviço de hotelaria diferenciado, onde cada animal é tratado como único e especial.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Nossa Missão</h3>
+                    <p>Proporcionar a melhor experiência de hospedagem para pets, garantindo conforto, segurança e muito carinho, como se estivessem em casa.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Nossos Valores</h3>
+                    <p>Amor pelos animais, responsabilidade, transparência e excelência no atendimento são os pilares que guiam nosso trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">130+</div>
+            <div>Pets Hospedados</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div>Clientes Satisfeitos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div>Anos de Experiência</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div>Monitoramento</div>
+        </div>
+    </section>
+
+    <section class="section team">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--secondary); margin-bottom: 3rem;">
+                Nossa Equipe
+            </h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3 style="color: var(--primary);">Dr. Kaique </h3>
+                    <p>Veterinário Chefe</p>
+                </div>
+                <div class="team-member">
+                    <h3 style="color: var(--primary);">Dr. Luiz </h3>
+                    <p>Veterinário </p>
+                </div>
+                <div class="team-member">
+                    <h3 style="color: var(--primary);">Muryel</h3>
+                    <p>Cuidador Principal</p>
+                </div>
+                <div class="team-member">
+                    <h3 style="color: var(--primary);">Tulio Rodrigues</h3>
+                    <p>Adestrador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>@Todos os direitos reservado a Let`s pet</p>
+    </footer>
+    
+</body>
+</html>
