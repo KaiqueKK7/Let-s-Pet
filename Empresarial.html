@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Pet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #FF8C00;
+            --secondary: #2E856E;
+            --background: #F5F5F5;
+            --text: #333333;
+            --light-text: #666666;
+        }
+
+        body {
+            background-color: var(--background);
+            background-color: rgb(199, 240, 241);
+        }
+
+        .header {
+            padding: 1.5rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgb(216, 240, 83);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 8px;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 10px;
+        }
+
+        .nav a:hover {
+            color: var(--secondary);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav a.about-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a.about-link:hover {
+            transform: scale(1.1);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #FF9F2E;
+        }
+
+        .main {
+            min-height: calc(100vh - 92px);
+            display: flex;
+            padding: 4rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .location {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 0.5s;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--text);
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 0.7s;
+        }
+
+        .title span {
+            color: var(--primary);
+            display: inline-block;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards 0.9s;
+        }
+
+        .title .green {
+            color: var(--secondary);
+            animation-delay: 1.1s;
+        }
+
+        .description {
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 1.3s;
+        }
+
+        .logo-illustration {
+            width: 400px;
+            height: 400px;
+            background: white;
+            border-radius: 50%;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-illustration:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .logo-illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-illustration:hover img {
+            transform: scale(1.1);
+        }
+
+        .no-bureaucracy {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 1.5s;
+        }
+
+        .no-bureaucracy::before {
+            content: "✓";
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .header {
+                padding: 1rem 2rem;
+            }
+
+            .main {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .logo-illustration {
+                width: 300px;
+                height: 300px;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                display: none;
+            }
+
+ 
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="LogoCachorro.png" alt="Pet Logo">
+            </div>
+            <div class="logo-text">Let's Pet</div>
+        </div>
+        <nav class="nav">
+            <a href="serviços.html" class="about-link">Serviços</a>
+            <a href="about.html" class="about-link">Sobre nós</a>
+            <a href="historia.html" class="about-link">Historia</a>
+            <a href="contratefacil.html" class="cta-button">Contrate fácil</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content">
+            <div class="location">Unidade Uberlândia</div>
+            <h1 class="title">
+                <span>O seu pet merece Férias!!!!</span> <span>Especiais</span> <span class="green">com todo carinho que ele precisa</span>
+            </h1>
+            <p class="description">
+                Economize em um hotel pet que realmente vale a pena, boa convivência com outros pets e pessoas sem deixar de garantir o cuidado ao seu companheiro peludo.
+            </p>
+            <a href="contratefacil.html" class="cta-button">Faça já seu registro!!!!</a>
+            <p class="no-bureaucracy">Sem burocracia! Online e rápido.</p>
+        </div>
+        <div class="logo-illustration">
+            <img src="LogoCachorro.png" alt="Logo Bull Terrier">
+        </div>
+
+        
+    </main>
+    <footer >
+            <p>@Todos os direitos reservado a Let`s pet</p>
+    </footer>
+</body>
+</html>
