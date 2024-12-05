@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary: #FF8C00;
+            --secondary: #2E856E;
+            --background: #F0F8FF;
+            --text: #333333;
+            --light-text: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            opacity: 1;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+       
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="Empresarial.html" style="color: var(--secondary); text-decoration: none; font-weight: bold;">
+            ← Voltar para Home
+        </a>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary);">Nossa trajetória</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">O Início da Jornada</h3>
+                    <p>Certa tarde, durante uma conversa em um café, sugeri a ideia de abrir um pet shop. "Por que não ajudamos a melhorar a vida dos animais e, ao mesmo tempo, a de seus tutores?" exclamei. Túlio, sempre com foco nos aspectos financeiros, achou a ideia intrigante, e Kaique Luiz imediatamente começou a pensar em um site onde os clientes poderiam comprar produtos online.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Os Desafios do Começo</h3>
+                    <p>Com entusiasmo, colocamos o plano em prática. O primeiro desafio foi a construção do capital. Juntamos nossas economias, mas ainda precisávamos de mais recursos. Decidimos realizar um evento de arrecadação onde, com a ajuda da comunidade local, venderíamos produtos feitos à mão, como biscoitos para cães e acessórios para gatos. O evento foi um sucesso, mas exigiu muito trabalho e horas sem dormir.
+
+                        Assim que conseguimos o dinheiro, enfrentamos outro desafio: encontrar um local adequado para o pet shop. Muitos imóveis eram caros ou não atendiam às nossas necessidades. Depois de muito procurar, conseguimos alugar um espaço em um ótimo ponto da cidade, mas precisávamos realizar reformas.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">O Site em Movimento</h3>
+                    <p>Enquanto Túlio e eu cuidávamos da parte física, Kaique Luiz mergulhou na criação do site. Ele investiu horas aprendendo novas tecnologias e construindo uma plataforma funcional, que permitiria aos clientes comprar produtos online com segurança e praticidade. 
+                    </p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">O Sucesso e Crescimento</h3>
+                    <p>Com perseverança, o pet shop "Cão e Gato" começou a ganhar reconhecimento. O site estava recebendo cada vez mais visitas, e os pedidos online começaram a crescer. Em algumas semanas, nós três percebemos que precisávamos expandir, e assim, decidimos transformar o pet shop em uma empresa completa que incluía clínicas veterinárias e pet grooming.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">O Legado</h3>
+                    <p>A nossa jornada não foi apenas sobre abrir um negócio, mas também sobre aprender a trabalhar em equipe, enfrentar desafios e, acima de tudo, fazer a diferença na vida dos animais e dos seus tutores. Nos tornamos uma referência na cidade, e nosso legado continua a inspirar outros jovens empreendedores.
+
+                        E assim, nós três, Muryel, Túlio e Kaique Luiz, mostramos que, com amizade, determinação e criatividade, é possível transformar sonhos em realidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>@Todos os direitos reservado a Let`s pet</p>
+    </footer>
+</body>
+
+</html>
