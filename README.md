@@ -5,7 +5,7 @@
 Além disso, **temos uma loja incrível** com **produtos especiais para quase todos os tipos de pets**! 🛒🐶🐱🐰 De ração e brinquedos a acessórios exclusivos, tudo pensado para proporcionar a melhor experiência para o seu amigo de quatro patas.
 
 ## O que oferecemos:
-- 🏠 **Acomodações confortáveis e seguras** para seu pet
+- 🏠 **Acomodações confortáveis e seguras** para seus pets
 - 🍖 **Alimentação de qualidade** e personalizada
 - 🧸 **Brinquedos e diversão garantidos**
 - 🛍️ **Loja com produtos exclusivos** para cães, gatos, roedores e muito mais!
